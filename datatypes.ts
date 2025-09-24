@@ -72,3 +72,17 @@ let personalDetails: object = {
 let myMarks: number | string | boolean = 'Ola' // Union Type Operator
 
 console.log(personalDetails)
+
+/*
+OUTPUT
+25
+25.12
+80
+Ola
+true
+false
+null
+Ola
+Ola
+{ myName: 'Ola', myAge: 25, myAddress: 'London, UK' }
+*/
