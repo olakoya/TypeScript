@@ -4,14 +4,20 @@
 //------------------------------
 // 1. if Statement
 //-------------------------------
-let myAge2: number = 17;
+let myAge2: number = 18;
 
 console.log("1. if Statement:");
 
 if (myAge2 >= 18) {
-    console.log("You are an adult and eligible to vote.");
+    console.log("You are an adult and eligible to vote."); // This block runs if the condition statement is true
 }
 console.log("-------------------------------\n");
+
+/*
+OUTPUT
+1. if Statement:
+You are an adult and eligible to vote.
+-------------------------------
 
 //------------------------------
 // 2. if...else Statement
@@ -28,9 +34,7 @@ console.log("-------------------------------\n");
 
 /*
 OUTPUT
-if Statement:
-_-------------------------------
-if...else Statement:
+i2. if...else Statement:
 It's not raining. No need for an umbrella. Wear sunglasses!
 -------------------------------
 */
@@ -67,26 +71,31 @@ Grade: B
 //-------------------------------
 // 4. switch Statement
 //-------------------------------
-let day: number = 3; // 1=Monday, 2=Tuesday, ..., 7=Sunday
+let day1: number = 3; // 1=Monday, 2=Tuesday, ..., 7=Sunday
 
-console.log("4. switch Statement:");
-switch (day) {
+console.log("4a. switch Statement:");
+switch (day1) {
     case 1:
         console.log("It's Monday.");
         break;
-}
+    case 2:
+        console.log("It's Tuesday.");
+        break;
+    case 3:
+        console.log("It's Wednesday.");
+        break;}
 console.log("-------------------------------\n");
 
 /*
 OUTPUT
-4. switch Statement:
-It's Monday.
+4a. switch Statement:
+It's Wednesday.
 -------------------------------
 */
 
-let day2: string = "Tuesday"; // "Monday", "Tuesday", ..., "Sunday"
+let day2: string = "Thursday"; // "Monday", "Tuesday", ..., "Sunday"
 
-console.log("4. switch Statement:");
+console.log("4b. switch Statement:");
 switch (day2) {
     case "Monday":
         console.log("It's Monday.");
@@ -117,7 +126,66 @@ console.log("-------------------------------\n");
 
 /*
 OUTPUT
-4. switch Statement:
-It's Tuesday.
+4b. switch Statement:
+It's Thursday.
 -------------------------------
+*/
+
+let day3: string = "Wednesday"; // "Monday", "Tuesday", ..., "Sunday"
+
+console.log("4c. switch Statement:");
+switch (day3) {
+    case "Monday":
+        console.log("Start of the week.");
+        break;
+    case "Tuesday":
+        console.log("Second day of the week.");
+        break;
+    case "Wednesday":
+        console.log("Midweek break!");
+        break;
+    case "Thursday":
+        console.log("Fourth day of the week.");
+        break;
+    case "Friday":
+        console.log("Almost the weekend!");
+        break;
+        default:
+            console.log("Just another day.");
+}
+console.log("-------------------------------\n");
+
+
+/*
+OUTPUT
+4c. switch Statement:
+Midweek break!
+-------------------------------
+*/
+
+//-------------------------------
+// 5. Ternary Operator (Short-hand for if...else)
+//-------------------------------
+let isLoggedIn: boolean = true;
+let message1: string;
+
+if (isLoggedIn) {
+    message1 = "Welcome back, user!";
+} else {
+    message1 = "Please log in to continue.";
+}
+console.log("mesaage1} // Traditional if...else statementt:");
+
+console.log("5. Ternary Operator:");
+
+let message: string = isLoggedIn ? "Welcome back, user!" : "Please log in to continue."; // Ternary operator
+console.log(message); // Ternary operator result
+
+console.log("-------------------------------\n");
+
+/*
+OUTPUT
+5. Ternary Operator:
+Welcome back, user!
+------------------------------
 */
