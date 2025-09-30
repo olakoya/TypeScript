@@ -1,6 +1,7 @@
 // enums-demo.ts
+// Demonstrates the use of enums in TypeScript
 
-// Numeric Enum
+// Numeric Enum 
 enum Direction {
     North,
     East,
