@@ -490,3 +490,353 @@ Green
 Blue
 Yellow
 */
+
+let marks = [85, 92, 78, 90, 88]
+let lengthOfThisArray: number = marks.length
+console.log(lengthOfThisArray) // 5
+let totalMarks: number = 0
+
+for(let i=0; i<marks.length; i++){
+    totalMarks += marks[i]! // totalMarks = totalMarks + marks[i]
+}
+
+console.log(`Total Marks: ${totalMarks}`) // Total Marks: 433
+
+/*
+OUTPUT
+5
+Total Marks: 433
+*/
+
+
+// Calculate total marks using for loop
+let sum = 0
+for (let i = 0; i < marks.length; i++) {
+    if (marks[i] !== undefined) {
+        sum += marks[i]! // sum = sum + marks[i]
+    }
+}
+console.log(`Total Marks using for loop: ${sum}`) // Total Marks using for loop: 433
+
+/*
+OUTPUT
+Total Marks using for loop: 433
+*/
+
+for (let i = 1; i <= marks.length - 1; i = i + 1) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+92
+78
+90
+88
+*/  
+
+
+for (let i = 1; i <= marks.length - 1; i = i + 1) {
+    console.log(marks[i-1])
+}
+
+/*
+OUTPUT
+85
+92
+78
+90
+88
+*/
+
+for (let i = 0; i <= marks.length - 1; i = i + 1) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+85
+92
+78
+90
+88
+*/
+
+for (let i = 0; i < marks.length; i = i + 1) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+85
+92
+78
+90
+88
+*/
+
+for (let i = 0; i < marks.length; i++) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+85
+92
+78
+90
+88
+*/
+
+for (let i = 0; i < marks.length; i += 1) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+85
+92
+78
+90
+88
+*/
+
+for (let i = 0; i < marks.length; i = i + 2) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+85
+78
+88
+*/
+
+for (let i = 1; i < marks.length; i = i + 2) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+92
+90
+*/
+
+for (let i = marks.length - 1; i >= 0; i--) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+88
+90
+78
+92
+85
+*/
+
+for (let i = marks.length - 1; i >= 0; i = i - 2) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+88
+78
+85
+*/
+
+for (let i = marks.length - 2; i >= 0; i = i - 2) {
+    console.log(marks[i])
+}
+
+/*
+OUTPUT
+90
+92
+*/
+
+// Calculate total marks using while loop
+let total = 0
+let w = 0
+while(w<marks.length){
+    if(marks[w] !== undefined){
+        total += marks[w]! // total = total + marks[w]
+    }
+    w++
+}
+console.log(`Total Marks using while loop: ${total}`) // Total Marks using while loop: 433
+
+/*
+OUTPUT
+Total Marks using while loop: 433
+*/
+
+// Using break statement in loops
+for(let i=1; i<=10; i++){
+    if(i === 5){
+        break // exit the loop when i is 5
+    }
+    console.log(i)
+}
+
+/*
+OUTPUT
+1
+2
+3
+4
+*/
+
+for(let i=1; i<=10; i++){
+    if(i % 2 === 0){
+        break // exit the loop when i is even
+    }
+    console.log(i)
+}
+
+/*
+OUTPUT
+1
+*/
+
+// Using continue statement in loops
+for(let i=1; i<=10; i++){
+    if(i === 5){
+        continue // skip the iteration when i is 5
+    }
+    console.log(i)
+}
+
+/*
+OUTPUT
+1
+2
+3
+4
+6
+7
+8
+9
+10
+*/
+
+for(let i=1; i<=10; i++){
+    if(i % 2 === 0){
+        continue // skip the iteration when i is even
+    }
+    console.log(i)
+}
+
+/*
+OUTPUT
+1
+3
+5
+7
+9
+*/  
+
+// Nested loops
+for(let i=1; i<=3; i++){ // outer loop
+    for(let j=1; j<=3; j++){ // inner loop
+        console.log(`i = ${i}, j = ${j}`)
+    }
+}
+
+/*
+OUTPUT
+i = 1, j = 1
+i = 1, j = 2
+i = 1, j = 3
+i = 2, j = 1
+i = 2, j = 2
+i = 2, j = 3
+i = 3, j = 1
+i = 3, j = 2
+i = 3, j = 3
+*/
+
+// Print multiplication table using nested loops
+for(let i=1; i<=5; i++){ // outer loop for number
+    console.log(`Multiplication Table of ${i}:`)
+    for(let j=1; j<=10; j++){ // inner loop for multiplier
+        console.log(`${i} x ${j} = ${i*j}`)
+    }
+    console.log('') // print a new line after each table
+}
+
+/*
+OUTPUT
+Multiplication Table of 1:
+1 x 1 = 1
+1 x 2 = 2
+1 x 3 = 3
+1 x 4 = 4
+1 x 5 = 5
+1 x 6 = 6
+1 x 7 = 7
+1 x 8 = 8
+1 x 9 = 9
+1 x 10 = 10
+
+Multiplication Table of 2:
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+
+Multiplication Table of 3:
+3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9           
+3 x 4 = 12
+3 x 5 = 15
+3 x 6 = 18
+3 x 7 = 21
+3 x 8 = 24
+3 x 9 = 27
+3 x 10 = 30
+
+// quit the output here for brevity
+*/
+// Print pattern using nested loops
+for(let i=1; i<=5; i++){ // outer loop for rows
+    let pattern = ''
+    for(let j=1; j<=i; j++){ // inner loop for columns
+        pattern += '* ' // append * to pattern
+    }
+    console.log(pattern) // print the pattern for each row
+}
+
+/*
+OUTPUT
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+*/
+
+for(let i=5; i>=1; i--){ // outer loop for rows
+    let pattern = ''
+    for(let j=1; j<=i; j++){ // inner loop for columns
+        pattern += '* ' // append * to pattern
+    }
+    console.log(pattern) // print the pattern for each row
+}
+
+/*
+OUTPUT
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+*/
