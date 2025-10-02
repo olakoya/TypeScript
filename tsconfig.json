@@ -7,7 +7,7 @@
     // Environment Settings
     "module": "nodenext",
     "target": "esnext",
-    "lib": ["esnext", "dom"],   // ensures Promise, async/await, and DOM APIs
+    "lib": ["es2015", "esnext", "dom"],   // ensures Promise, async/await, and DOM APIs
     "types": [],
 
     // Other Outputs
@@ -26,6 +26,7 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
+    "esModuleInterop": true,
     "skipLibCheck": true
   },
   "include": ["*.ts"]   // adjust if files live in /src
