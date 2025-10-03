@@ -29,7 +29,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["*.ts"]   // adjust if files live in /src
+  "include": ["*.ts", "Day_7/string-functions.ts", "Day_1/index.ts", "Day_2/datatypes.ts", "Day_3/operators.ts", "Day_3/console-printing.ts", "Day_3/conditional-statements.ts", "Day_4/arrays-and-tuples.ts", "Day_4/enums.ts", "Day_5/loops.ts", "Day_5/functions.ts"]   // adjust if files live in /src
 }
 // F --- IGNORE ---
 // Function is used to group a set of statements together to perform a specific task
