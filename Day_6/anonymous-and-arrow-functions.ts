@@ -86,3 +86,93 @@ With custom greeting: Welcome, Eve
 With default greeting: Hello, Eve
 */
 
+
+// 5 Anonymous Function with Parameters ()
+
+let anonymousFunctionWithParameters = function(a: number, b: number): number {
+    return a + b;
+};
+console.log("Anonymous Function with Parameters:", anonymousFunctionWithParameters(4, 5)); // 9
+
+/*
+OUTPUT:
+Anonymous Function with Parameters: 9
+*/
+
+// 6 Arrow Function
+
+let arrowFunction = (): void => console.log("This is an arrow function");
+arrowFunction(); // This is an arrow function
+
+/*
+OUTPUT:
+This is an arrow function
+*/
+
+let arrowFunction1 = (): void => console.log("This is another arrow function")
+arrowFunction1(); // This is another arrow function
+console.log('--------------------------------------')
+
+/*
+OUTPUT:
+This is another arrow function
+*/
+
+
+// b. Arrow Function with Parameters ()
+
+let arrowFunctionWithParameters = (a: number, b: number): number => a * b;
+console.log("Arrow Function with Parameters:", arrowFunctionWithParameters(4, 5)); // 20
+
+/*
+OUTPUT:
+Arrow Function with Parameters: 20
+*/
+
+// Antoher Examples
+
+let arrowFunctionWithParameters1 = (x: number, y: number): number => x * y
+let arrowFunctionWithParameters2 = (x: number, y: number): number => { return x * y}
+
+console.log(arrowFunctionWithParameters1(4, 5)); // 20
+console.log(arrowFunctionWithParameters2(4, 5)); // 20
+
+/*
+OUTPUT:
+20
+20
+*/
+
+// 7 Anonymous Function without Parameters ()
+
+let anonymousFunctionWithoutParameters = function(): string {
+    return "Hello from anonymous function!";
+};
+console.log(anonymousFunctionWithoutParameters()); // Hello from anonymous function!
+
+/*
+OUTPUT:
+Hello from anonymous function!
+*/
+
+// 8 Arrow Function without Parameters ()
+
+let arrowFunctionWithoutParameters = (): string => "Hello from arrow function!";
+console.log(arrowFunctionWithoutParameters()); // Hello from arrow function!
+
+/*
+OUTPUT:
+Hello from arrow function!
+*/
+
+// 9 Anonymous Function with Single Parameter
+
+let anonymousFunctionSingleParameter = function(name: string): string {
+    return `Hello, ${name}!`;
+};
+console.log(anonymousFunctionSingleParameter("Alice")); // Hello, Alice!
+
+/*
+OUTPUT:
+Hello, Alice!
+*/
