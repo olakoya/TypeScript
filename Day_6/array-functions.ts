@@ -111,3 +111,60 @@ console.log("Sum of array elements using reduce():", sum); // 111
 OUTPUT:
 Sum of array elements using reduce(): 111
 */
+
+// 11. Includes() - Determines whether an array includes a certain value among its entries or Check if an element exists in an array
+console.log("Incleudes 99:", numbers.includes(99)); // true
+console.log("Includes 100:", numbers.includes(100)); // false
+
+/*
+OUTPUT:
+Incleudes 99: true
+Includes 100: false
+*/
+
+// 12. indexOf() - Returns the first index at which a given element can be found in the array, or -1 if it is not present
+console.log("Index of 99:", numbers.indexOf(99)); // 2
+console.log("Index of 100:", numbers.indexOf(100)); // -1
+
+/*
+OUTPUT:
+Index of 99: 2
+Index of 100: -1
+*/
+
+// 13. find() - Returns the value of the first element in the array that satisfies the provided testing function
+let found = numbers.find(num => num > 3);
+console.log("First number greater than 3 using find():", found); // 99
+
+/*
+OUTPUT:
+First number greater than 3 using find(): 99
+*/
+
+// 14. findIndex() - Returns the index of the first element in the array that satisfies the provided testing function
+let foundIndex = numbers.findIndex(num => num > 3);
+console.log("Index of first number greater than 3 using findIndex():", foundIndex); // 2
+
+/*
+OUTPUT:
+Index of first number greater than 3 using findIndex(): 2
+*/
+
+// 15. sort() - Sorts the elements of an array in place and returns the sorted array
+numbers.sort((a, b) => a - b); // Ascending order
+console.log("Sorted array using sort():", numbers); // [1, 2, 4, 5, 99]
+
+/*
+OUTPUT:
+Sorted array using sort(): [ 1, 2, 4, 5, 99 ]
+*/
+
+// 16. reverse() - Reverses the order of the elements in an array in place
+numbers.reverse();
+console.log("Reversed array using reverse():", numbers); // [99, 5, 4, 2, 1]
+
+/*
+OUTPUT:
+Reversed array using reverse(): [ 99, 5, 4, 2, 1 ]
+*/
+console.log('--------------------------------------')
