@@ -102,6 +102,7 @@ var myDog = new Dog("Buddy");
 myDog.speak(); // Output: Buddy makes a noise.
 myDog.bark(); // Output: Buddy barks loudly!    
 /*
+OUTPUT
 Car Make: Toyota, Model: Corolla, Year: 2020
 Hello, my name is Alice and I am 30 years old.
 Hello, my name is Bob and I am 25 years old.
@@ -110,29 +111,177 @@ Message length: 70
 Uppercase message:  HELLO, TYPESCRIPT! TYPESCRIPT IS GREAT FOR LARGE-SCALE APPLICATIONS.
 Buddy makes a noise.
 Buddy barks loudly!
-Lowercase message:  hello, typescript! typescript is great for large-scale applications.
-Substring (0, 5):  Hell
-Index of 'Type': 8
-Replace 'TypeScript' with 'JavaScript':  Hello, JavaScript! TypeScript is great for large-scale applications.
-Trimmed message: Hello, TypeScript!
-Trimmed: Hello, TypeScript! TypeScript is great for large-scale applications.
-Split message by space: [
-  '',
-  'Hello,',
-  'TypeScript!',
-  'TypeScript',
-  'is',
-  'great',
-  'for',
-  'large-scale',
-  'applications.',
-  ''
-]
-Starts with 'Hello': true
-Ends with 'TypeScript': false
-Includes 'TypeScript'? true
-Starts with 'Hello'? false
-Ends with 'TypeScript'? false
-Includes 'TypeScript'? true
-Replaced 'TypeScript' with 'World Globally':  Hello, World Globally! World Globally is great for large-scale applications.
-*/ 
+*/
+// Types of OOPS
+// 1. Encapsulation: Bundling data and methods that operate on that data within a single unit (class).
+// 2. Inheritance: Mechanism where a new class can inherit properties and methods from an existing class.
+// 3. Polymorphism: Ability to present the same interface for different underlying data types.
+// 4. Abstraction: Hiding complex implementation details and showing only the necessary parts of the object.
+// 1. Example of Encapsulation
+var BankAccount = /** @class */ (function () {
+    function BankAccount(initialBalance) {
+        this.balance = initialBalance;
+    }
+    BankAccount.prototype.deposit = function (amount) {
+        if (amount > 0) {
+            this.balance += amount;
+            console.log("Deposited: $".concat(amount));
+        }
+        else {
+            console.log("Deposit amount must be positive.");
+        }
+    };
+    BankAccount.prototype.withdraw = function (amount) {
+        if (amount > 0 && amount <= this.balance) {
+            this.balance -= amount;
+            console.log("Withdrew: $".concat(amount));
+        }
+        else {
+            console.log("Invalid withdrawal amount.");
+        }
+    };
+    BankAccount.prototype.getBalance = function () {
+        return this.balance;
+    };
+    return BankAccount;
+}());
+var myAccount = new BankAccount(1000);
+myAccount.deposit(500); // Deposited: $500
+myAccount.withdraw(200); // Withdrew: $200
+console.log("Current Balance:", myAccount.getBalance()); // Current Balance: 1300
+/*
+OUTPUT
+Deposited: $500
+Withdrew: $200
+Current Balance: 1300
+*/
+console.log("--------------------------------------------------");
+// Example of Polymorphism
+var Shape = /** @class */ (function () {
+    function Shape() {
+    }
+    Shape.prototype.area = function () {
+        return 0;
+    };
+    return Shape;
+}());
+var Circle = /** @class */ (function (_super) {
+    __extends(Circle, _super);
+    function Circle(radius) {
+        var _this = _super.call(this) || this;
+        _this.radius = radius;
+        return _this;
+    }
+    Circle.prototype.area = function () {
+        return Math.PI * this.radius * this.radius;
+    };
+    return Circle;
+}(Shape));
+var Rectangle = /** @class */ (function (_super) {
+    __extends(Rectangle, _super);
+    function Rectangle(width, height) {
+        var _this = _super.call(this) || this;
+        _this.width = width;
+        _this.height = height;
+        return _this;
+    }
+    Rectangle.prototype.area = function () {
+        return this.width * this.height;
+    };
+    return Rectangle;
+}(Shape));
+var shapes = [new Circle(5), new Rectangle(4, 6)];
+shapes.forEach(function (shape) {
+    console.log("Area:", shape.area());
+});
+/*
+OUTPUT
+Area: 78.53981633974483
+Area: 24
+*/
+console.log("--------------------------------------------------");
+// 3. Example of Abstraction
+var Vehicle = /** @class */ (function () {
+    function Vehicle() {
+    }
+    return Vehicle;
+}());
+var CarVehicle = /** @class */ (function (_super) {
+    __extends(CarVehicle, _super);
+    function CarVehicle() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    CarVehicle.prototype.start = function () {
+        console.log("Car started.");
+    };
+    CarVehicle.prototype.stop = function () {
+        console.log("Car stopped.");
+    };
+    return CarVehicle;
+}(Vehicle));
+var myVehicle = new CarVehicle();
+myVehicle.start(); // Car started.
+myVehicle.stop(); // Car stopped.
+/*
+OUTPUT
+Car started.
+Car stopped.
+*/
+console.log("--------------------------------------------------");
+// 4. Example of Abstraction
+var Appliance = /** @class */ (function () {
+    function Appliance() {
+    }
+    return Appliance;
+}());
+var WashingMachine = /** @class */ (function (_super) {
+    __extends(WashingMachine, _super);
+    function WashingMachine() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    WashingMachine.prototype.turnOn = function () {
+        console.log("Washing Machine is now ON.");
+    };
+    WashingMachine.prototype.turnOff = function () {
+        console.log("Washing Machine is now OFF.");
+    };
+    return WashingMachine;
+}(Appliance));
+var myAppliance = new WashingMachine();
+myAppliance.turnOn(); // Washing Machine is now ON.
+myAppliance.turnOff(); // Washing Machine is now OFF.
+/*
+OUTPUT
+Washing Machine is now ON.
+Washing Machine is now OFF.
+*/
+console.log("--------------------------------------------------");
+// Example of Inheritance is already shown in the Dog and Animal classes above.
+// Dog class inherits from Animal class.
+// Dog class can use the speak method from Animal class and also has its own method bark.
+// Example of Constructor Overloading
+var RectangleOverload = /** @class */ (function () {
+    function RectangleOverload(width, height) {
+        this.width = width || 1; // Default width is 1
+        this.height = height || 1; // Default height is 1
+    }
+    RectangleOverload.prototype.area = function () {
+        return this.width * this.height;
+    };
+    return RectangleOverload;
+}());
+var rect1 = new RectangleOverload();
+console.log("Area of rect1 (default):", rect1.area()); // Area of rect1 (default): 1
+var rect2 = new RectangleOverload(4, 5);
+console.log("Area of rect2 (4x5):", rect2.area()); // Area of rect2 (4x5): 20
+/*
+OUTPUT
+Area of rect1 (default): 1
+Area of rect2 (4x5): 20
+*/
+console.log("--------------------------------------------------");
+// Summary
+// In this lesson, we learned about Classes, Objects, Methods, and Constructors in TypeScript.
+// We also explored the principles of Object-Oriented Programming (OOPS) including Encapsulation, Inheritance, Polymorphism, and Abstraction with practical examples.
+// We saw how to create classes, instantiate objects, and define methods and constructors.      
+// Additionally, we demonstrated string functions and their usage in TypeScript.

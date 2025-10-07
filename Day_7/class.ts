@@ -120,3 +120,199 @@ Uppercase message:  HELLO, TYPESCRIPT! TYPESCRIPT IS GREAT FOR LARGE-SCALE APPLI
 Buddy makes a noise.
 Buddy barks loudly!
 */
+
+// Types of OOPS
+// 1. Encapsulation: Bundling data and methods that operate on that data within a single unit (class).
+// 2. Inheritance: Mechanism where a new class can inherit properties and methods from an existing class.
+// 3. Polymorphism: Ability to present the same interface for different underlying data types.
+// 4. Abstraction: Hiding complex implementation details and showing only the necessary parts of the object.
+
+// 1. Example of Encapsulation
+class BankAccount {
+    private balance: number;
+
+    constructor(initialBalance: number) {
+        this.balance = initialBalance;
+    }
+
+    deposit(amount: number) {
+        if (amount > 0) {
+            this.balance += amount;
+            console.log(`Deposited: $${amount}`);
+        } else {
+            console.log("Deposit amount must be positive.");
+        }
+    }
+
+    withdraw(amount: number) {
+        if (amount > 0 && amount <= this.balance) {
+            this.balance -= amount;
+            console.log(`Withdrew: $${amount}`);
+        } else {
+            console.log("Invalid withdrawal amount.");
+        }
+    }
+
+    getBalance() {
+        return this.balance;
+    }
+}
+
+let myAccount = new BankAccount(1000);
+myAccount.deposit(500); // Deposited: $500
+myAccount.withdraw(200); // Withdrew: $200
+console.log("Current Balance:", myAccount.getBalance()); // Current Balance: 1300
+
+/*
+OUTPUT
+Deposited: $500
+Withdrew: $200
+Current Balance: 1300
+*/
+
+console.log("--------------------------------------------------");
+
+// Example of Polymorphism
+class Shape {
+    area(): number {
+        return 0;
+    }
+}
+
+class Circle extends Shape {
+    radius: number;
+
+    constructor(radius: number) {
+        super();
+        this.radius = radius;
+    }
+
+    area(): number {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+
+class Rectangle extends Shape {
+    width: number;
+    height: number;
+
+    constructor(width: number, height: number) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    area(): number {
+        return this.width * this.height;
+    }
+}
+
+let shapes: Shape[] = [new Circle(5), new Rectangle(4, 6)];
+shapes.forEach(shape => {
+    console.log("Area:", shape.area());
+});
+
+/*
+OUTPUT
+Area: 78.53981633974483
+Area: 24
+*/
+console.log("--------------------------------------------------");
+
+// 3. Example of Abstraction
+abstract class Vehicle {
+    abstract start(): void;
+    abstract stop(): void;
+}
+
+class CarVehicle extends Vehicle {
+    start() {
+        console.log("Car started.");
+    }
+
+    stop() {
+        console.log("Car stopped.");
+    }
+}
+
+let myVehicle: Vehicle = new CarVehicle();
+myVehicle.start(); // Car started.
+myVehicle.stop(); // Car stopped.
+
+/*
+OUTPUT
+Car started.
+Car stopped.
+*/      
+console.log("--------------------------------------------------");
+
+// 4. Example of Abstraction
+abstract class Appliance {
+    abstract turnOn(): void;
+    abstract turnOff(): void;
+}
+
+class WashingMachine extends Appliance {
+    turnOn() {
+        console.log("Washing Machine is now ON.");
+    }
+
+    turnOff() {
+        console.log("Washing Machine is now OFF.");
+    }
+}
+
+let myAppliance: Appliance = new WashingMachine();
+myAppliance.turnOn(); // Washing Machine is now ON.
+myAppliance.turnOff(); // Washing Machine is now OFF.
+
+/*
+OUTPUT
+Washing Machine is now ON.
+Washing Machine is now OFF.
+*/
+console.log("--------------------------------------------------");
+
+// Example of Inheritance is already shown in the Dog and Animal classes above.
+// Dog class inherits from Animal class.
+// Dog class can use the speak method from Animal class and also has its own method bark.
+
+// Example of Constructor Overloading
+
+class RectangleOverload {
+    width: number;
+    height: number;
+
+    // Constructor Overloading
+    constructor();
+    constructor(width: number, height: number);
+    constructor(width?: number, height?: number) {
+        this.width = width || 1; // Default width is 1
+        this.height = height || 1; // Default height is 1
+    }
+
+    area(): number {
+        return this.width * this.height;
+    }
+}
+
+let rect1 = new RectangleOverload();
+console.log("Area of rect1 (default):", rect1.area()); // Area of rect1 (default): 1
+
+let rect2 = new RectangleOverload(4, 5);
+console.log("Area of rect2 (4x5):", rect2.area()); // Area of rect2 (4x5): 20
+
+/*
+OUTPUT
+Area of rect1 (default): 1
+Area of rect2 (4x5): 20
+*/
+console.log("--------------------------------------------------");
+
+
+// Summary
+// In this lesson, we learned about Classes, Objects, Methods, and Constructors in TypeScript.
+// We also explored the principles of Object-Oriented Programming (OOPS) including Encapsulation, Inheritance, Polymorphism, and Abstraction with practical examples.
+// We saw how to create classes, instantiate objects, and define methods and constructors.      
+// Additionally, we demonstrated string functions and their usage in TypeScript.
+    
