@@ -100,5 +100,85 @@ Name: Alice, Age: 0, Address: Not Provided
 Name: Bob, Age: 30, Address: Not Provided
 Name: Charlie, Age: 25, Address: 123 Main St
 */
+console.log("---------------------------------------------------");
+
+// More examples
+class Bible {
+    book: string;
+    chapter: number;
+    verse: number;
+
+    constructor();
+    constructor(book: string);
+    constructor(book: string, chapter: number);
+    constructor(book: string, chapter: number, verse: number);
+
+    constructor(book?: string, chapter?: number, verse?: number) {
+        this.book = book || "Genesis";
+        this.chapter = chapter || 1;
+        this.verse = verse || 1;
+    }
+
+    displayReference(): void {
+        console.log(`Book: ${this.book}, Chapter: ${this.chapter}, Verse: ${this.verse}`);
+    }
+}
+
+const ref1 = new Bible();
+const ref2 = new Bible("Exodus");
+const ref3 = new Bible("Psalms", 23);
+const ref4 = new Bible("John", 3, 16);
+
+ref1.displayReference(); // Book: Genesis, Chapter: 1, Verse: 1
+ref2.displayReference(); // Book: Exodus, Chapter: 1, Verse: 1
+ref3.displayReference(); // Book: Psalms, Chapter: 23, Verse: 1
+ref4.displayReference(); // Book: John, Chapter: 3, Verse: 16
+
+/*
+Output:
+Book: Genesis, Chapter: 1, Verse: 1
+Book: Exodus, Chapter: 1, Verse: 1
+Book: Psalms, Chapter: 23, Verse: 1
+Book: John, Chapter: 3, Verse: 16
+*/
+
+//-------------------------------------------------------------------
+class Rectangle {
+    width: number;
+    height: number;
+
+    constructor();
+    constructor(width: number);
+    constructor(width: number, height: number);
+
+    constructor(width?: number, height?: number) {
+        this.width = width || 1;
+        this.height = height || 1;
+    }
+
+    area(): number {
+        return this.width * this.height;
+    }
+}
+
+const rect1 = new Rectangle();
+const rect2 = new Rectangle(5);
+const rect3 = new Rectangle(4, 6);
+
+console.log(`Area of rect1: ${rect1.area()}`); // Area of rect1: 1
+console.log(`Area of rect2: ${rect2.area()}`); // Area of rect2: 5
+console.log(`Area of rect3: ${rect3.area()}`); // Area of rect3: 24
+
+/*
+Output:
+Area of rect1: 1
+Area of rect2: 5
+Area of rect3: 24
+*/
+
+//
+
+
+
 
     

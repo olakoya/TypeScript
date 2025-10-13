@@ -83,3 +83,55 @@ Name: Alice, Age: 0, Address: Not Provided
 Name: Bob, Age: 30, Address: Not Provided
 Name: Charlie, Age: 25, Address: 123 Main St
 */
+console.log("---------------------------------------------------");
+// More examples
+var Bible = /** @class */ (function () {
+    function Bible(book, chapter, verse) {
+        this.book = book || "Genesis";
+        this.chapter = chapter || 1;
+        this.verse = verse || 1;
+    }
+    Bible.prototype.displayReference = function () {
+        console.log("Book: ".concat(this.book, ", Chapter: ").concat(this.chapter, ", Verse: ").concat(this.verse));
+    };
+    return Bible;
+}());
+var ref1 = new Bible();
+var ref2 = new Bible("Exodus");
+var ref3 = new Bible("Psalms", 23);
+var ref4 = new Bible("John", 3, 16);
+ref1.displayReference(); // Book: Genesis, Chapter: 1, Verse: 1
+ref2.displayReference(); // Book: Exodus, Chapter: 1, Verse: 1
+ref3.displayReference(); // Book: Psalms, Chapter: 23, Verse: 1
+ref4.displayReference(); // Book: John, Chapter: 3, Verse: 16
+/*
+Output:
+Book: Genesis, Chapter: 1, Verse: 1
+Book: Exodus, Chapter: 1, Verse: 1
+Book: Psalms, Chapter: 23, Verse: 1
+Book: John, Chapter: 3, Verse: 16
+*/
+//-------------------------------------------------------------------
+var Rectangle = /** @class */ (function () {
+    function Rectangle(width, height) {
+        this.width = width || 1;
+        this.height = height || 1;
+    }
+    Rectangle.prototype.area = function () {
+        return this.width * this.height;
+    };
+    return Rectangle;
+}());
+var rect1 = new Rectangle();
+var rect2 = new Rectangle(5);
+var rect3 = new Rectangle(4, 6);
+console.log("Area of rect1: ".concat(rect1.area())); // Area of rect1: 1
+console.log("Area of rect2: ".concat(rect2.area())); // Area of rect2: 5
+console.log("Area of rect3: ".concat(rect3.area())); // Area of rect3: 24
+/*
+Output:
+Area of rect1: 1
+Area of rect2: 5
+Area of rect3: 24
+*/
+//
